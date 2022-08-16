@@ -1,3 +1,58 @@
+* [一 子服务概览](#一-子服务概览)
+  * [1 Config](#1-config)
+    * [初始化](#初始化)
+    * [关键模块](#关键模块)
+      * [Config](#config)
+      * [QueryConfig](#queryconfig)
+      * [LogConfig](#logconfig)
+      * [MetaConfig](#metaconfig)
+      * [StorageConfig](#storageconfig)
+      * [HiveCatalogConfig](#hivecatalogconfig)
+  * [2 Tracing](#2-tracing)
+  * [3 SessionManager](#3-sessionmanager)
+    * [初始化](#初始化)
+    * [关键模块](#关键模块)
+      * [SessionManager](#sessionmanager)
+      * [Config](#config)
+      * [ClusterDiscovery](#clusterdiscovery)
+      * [CatalogManager](#catalogmanager)
+      * [HttpQueryManager](#httpquerymanager)
+      * [CacheManager](#cachemanager)
+  * [4 MySQL Handler](#4-mysql-handler)
+    * [启动](#启动)
+    * [关键模块](#关键模块)
+      * [MySQLHandler](#mysqlhandler)
+      * [MySQLConnection](#mysqlconnection)
+      * [InteractiveWorker/InteractiveWorkerBase](#interactiveworkerinteractiveworkerbase)
+      * [Session](#session)
+      * [QueryContextShared](#querycontextshared)
+      * [QueryContext](#querycontext)
+  * [5 ClickHouse Handler](#5-clickhouse-handler)
+  * [6 HTTP Handler](#6-http-handler)
+  * [7 Metrics API Service](#7-metrics-api-service)
+    * [启动](#启动)
+    * [关键模块](#关键模块)
+      * [MetricService](#metricservice)
+      * [PROMETHEUS_HANDLE](#prometheus_handle)
+  * [8 HTTP API Service](#8-http-api-service)
+    * [启动](#启动)
+    * [关键模块](#关键模块)
+      * [HttpService](#httpservice)
+  * [9 RPC API Service](#9-rpc-api-service)
+    * [Service启动](#service启动)
+    * [关键模块](#关键模块)
+      * [RpcService](#rpcservice)
+      * [DatabendQueryFlightService](#databendqueryflightservice)
+      * [DatabendQueryFlightDispatcher ⭐️](#databendqueryflightdispatcher-)
+      * [FlightScatter](#flightscatter)
+      * [HashFligthScatter](#hashfligthscatter)
+      * [BroadcastFlightScatter](#broadcastflightscatter)
+  * [10 Cluster Register](#10-cluster-register)
+    * [Woker节点注册](#woker节点注册)
+    * [关键模块](#关键模块)
+      * [SessionManager](#sessionmanager)
+      * [ClusterDiscovery/ClusterHeartbeat/Cluster/ClusterMgr](#clusterdiscoveryclusterheartbeatclusterclustermgr)
+
 ## 一 子服务概览
 
 ### 1 Config
@@ -534,7 +589,6 @@ struct InteractiveWorkerBase<W: std::io::Write> {
             }
         }
     }
-
 ```
 
 ##### Session
@@ -577,7 +631,6 @@ pub struct Session {
             .set_query_context_shared(Some(shared.clone()));
         Ok(shared)
     }
-
 ```
 
 ##### QueryContextShared
