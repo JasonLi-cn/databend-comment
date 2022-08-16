@@ -36,8 +36,8 @@
   * [5 执行Pipeline](#5-执行pipeline)
     * [ProcessorExecutorStream](#processorexecutorstream)
     * [PipelinePullingExecutor](#pipelinepullingexecutor)
-    * [PipelineExecutor ⭐️](#pipelineexecutor-)
-    * [RunningGraph/ExecutingGraph ⭐️](#runninggraphexecutinggraph-)
+    * [PipelineExecutor ⭐️](#pipelineexecutor)
+    * [RunningGraph/ExecutingGraph ⭐️](#runninggraphexecutinggraph)
     * [ExecutorWorkerContext](#executorworkercontext)
     * [Node](#node)
     * [State](#state)
@@ -1053,7 +1053,7 @@ pub struct PipelinePullingExecutor {
     }
 ```
 
-##### PipelineExecutor ⭐️
+##### PipelineExecutor
 
 ```rust
 // file: query/src/pipelines/new/executor/pipeline_executor.rs
@@ -1125,7 +1125,7 @@ pub unsafe fn execute_single_thread(&self, thread_num: usize) -> Result<()> {
 
 ```
 
-##### RunningGraph/ExecutingGraph ⭐️
+##### RunningGraph/ExecutingGraph
 
 负责任务的调度
 
