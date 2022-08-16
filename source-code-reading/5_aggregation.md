@@ -1,3 +1,25 @@
+* [五 Aggregation](#五-aggregation)
+  * [Build Pipeline](#build-pipeline)
+    * [V1](#v1)
+      * [QueryPipelineBuilder](#querypipelinebuilder)
+    * [V2](#v2)
+      * [PipelineBuilder](#pipelinebuilder)
+  * [关键模块](#关键模块)
+    * [TransformAggregator](#transformaggregator)
+    * [AggregatorTransform](#aggregatortransform)
+    * [Aggregator(trait)](#aggregatortrait)
+    * [PartialAggregator](#partialaggregator)
+    * [FinalAggregator](#finalaggregator)
+    * [HashMethod(trait)](#hashmethodtrait)
+      * [HashMethodSingleString](#hashmethodsinglestring)
+    * [PolymorphicKeyHelper(trait)](#polymorphickeyhelpertrait)
+      * [HashMethodSingleString](#hashmethodsinglestring)
+    * [AggregatorState(trait)](#aggregatorstatetrait)
+      * [SerializedKeysAggregatorState](#serializedkeysaggregatorstate)
+    * [HashTable/HashMapKind/HashTableKind](#hashtablehashmapkindhashtablekind)
+    * [AggregateFunction(trait)](#aggregatefunctiontrait)
+      * [AggregateCountFunction](#aggregatecountfunction)
+
 ## 五 Aggregation
 
 ### Build Pipeline
