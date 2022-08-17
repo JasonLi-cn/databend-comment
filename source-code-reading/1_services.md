@@ -55,6 +55,19 @@
 
 ## 一 子服务概览
 
+
+| 模块                | 功能                        |
+| --------------------- | ----------------------------- |
+| Config              | 负责加载和管理配置文件      |
+| Tracing             | 负责日志管理                |
+| SessionManager      | 负责session管理             |
+| MySQL Handler       | 负责对外提供MySQL服务       |
+| ClickHouse Handler  | 负责对外提供ClickHouse服务  |
+| HTTP Handler        | 负责对外提供HTTP接口服务    |
+| Metrics API Service | 负责指标统计（Prometheus）  |
+| RPC API Service     | 负责RPC接口服务和节点间通信 |
+| Cluster Register    | 负责节点的注册              |
+
 ### 1 Config
 
 #### 初始化
@@ -302,6 +315,14 @@ pub struct HiveCatalogConfig {
 ```
 
 ### 2 Tracing
+
+```rust
+    let _guards = init_global_tracing(
+        app_name.as_str(),
+        conf.log.dir.as_str(),
+        conf.log.level.as_str(),
+    );
+```
 
 ### 3 SessionManager
 
