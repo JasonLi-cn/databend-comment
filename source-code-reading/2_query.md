@@ -113,6 +113,8 @@ let interpreter = InterpreterFactoryV2::get(ctx.clone(), &plan_node)?;
 let plan_node = PlanParser::parse(ctx.clone(), sql).await?;
 ```
 
+![image.png](./assets/1661135526502-image.png)
+
 ##### PlanParser
 
 ```rust
@@ -389,6 +391,8 @@ let mut planner = Planner::new(context.clone());
 let (plan_node, _) = planner.plan_sql(sql).await?;
 ```
 
+![image.png](./assets/1661140385795-image.png)
+
 ##### Planner
 
 ```rust
@@ -616,6 +620,8 @@ let interpreter = InterpreterFactory::get(ctx.clone(), plan_node)?;
 let mut stream = interpreter.execute(None).await?;
 ```
 
+![image.png](./assets/1661143930884-image.png)
+
 ##### InterpreterFactory
 
 ```rust
@@ -707,6 +713,8 @@ pub struct QueryPipelineBuilder {
 let interpreter = InterpreterFactoryV2::get(ctx.clone(), &plan_node)?;
 let mut stream = interpreter.execute(None).await?;
 ```
+
+![image.png](./assets/1661145672312-image.png)
 
 ##### InterpreterFactoryV2
 
