@@ -930,7 +930,6 @@ pub trait Aggregator: Sized + Send {
 
 ![image.png](./assets/1661265830054-image.png)
 
-
 ##### InputPort/OutputPort/SharedStatus
 
 ```rust
